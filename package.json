@@ -1,0 +1,27 @@
+{
+  "name": "resnwmapp",
+  "version": "1.0.0",
+  "description": "loop resizing and watermarking application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sylvery/resnwm.git"
+  },
+  "keywords": [
+    "image",
+    "manipulation",
+    "loop",
+    "news",
+    "and",
+    "media"
+  ],
+  "author": "sylvery",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sylvery/resnwm/issues"
+  },
+  "homepage": "https://github.com/sylvery/resnwm#readme"
+}
