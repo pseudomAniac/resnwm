@@ -23,5 +23,12 @@
   "bugs": {
     "url": "https://github.com/sylvery/resnwm/issues"
   },
-  "homepage": "https://github.com/sylvery/resnwm#readme"
+  "homepage": "https://github.com/sylvery/resnwm#readme",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "ejs": "^2.4.2",
+    "express": "^4.13.4",
+    "jimp": "^0.2.24",
+    "multer": "^1.1.0"
+  }
 }
