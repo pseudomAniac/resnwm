@@ -1,10 +1,11 @@
 {
   "name": "resnwmapp",
-  "version": "1.0.0",
-  "description": "loop resizing and watermarking application",
+  "version": "1.0.1",
+  "description": "loop picture resizing and watermarking application",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",

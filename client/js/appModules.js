@@ -1,0 +1,1 @@
+var resnwmapp = angular.module('resnwmapp', []);

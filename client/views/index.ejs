@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="resnwmapp">
 <head>
 	<title>welcome | resnwm | 2016</title>
 	<% include partials/head %>
@@ -8,23 +8,39 @@
 	<header id="header" class="">
 		<% include partials/header %>
 	</header><!-- /header -->
-	<main class="row">
-		<div class="full column">
-			<h1 class="text-center">ResNWm</h1>
-			<p class="text-center">It gives me great pleasure to welcome you to the online LOOP picture/photograph resizing and watermarking application.<br />This application was designed with love and care by <a href="mailto:sylver.yagi@digicelgroup.com?subject=feedback" "email me">Sylver Yagi</a>. Do get in touch with me for more info.</p>
+	<main class="row" ng-controller="appCtrl">
+		<div class="col-md-6">
+			<h1 class="text-center small text-muted">RESize aNd WaterMark ~ RESNWM</h1>
+			<p class="text-left text-default bg-info well">Hi my name is {{user.name}}. I am {{ user.age }} years old and {{ user.height}} cm in height! It gives me great pleasure to welcome you to the online LOOP photograph resizing and watermarking application <span class="text-muted">resnwmapp</span>. I hope this simple web application help you out a lot. It was designed with love by <a href="mailto:sylver@trend.media?subject=resnwm%20feedback" alt="email me">Sylver Yagi</a>.</p>
+			<div>
+				<ul class="list-group bx-slider">
+					<li class="list-group-item">
+						<img src="public/tmp/slider-01.jpg" class="img-responsive" alt="slider-01.jpg">
+					</li>
+					<li class="list-group-item">
+						<img src="public/tmp/slider-02.jpg" class="img-responsive" alt="slider-02.jpg">
+					</li>
+					<li class="list-group-item">
+						<img src="public/tmp/slider-03.jpg" class="img-responsive" alt="slider-03.jpg">
+					</li>
+				</ul>
+			</div>
 		</div>
-		<div class="container">
-			<form action="/api/upload" method="POST" enctype="multipart/form-data">
-				<div class="row">
-					<div class="two-thirds column">
-						<label for="fileInput">Upload File</label>
-						<input id="fileInput" type="file" name="image" required />
+		<div class="col-md-6">
+			<section class="container-fluid well">
+				<div id="image-previewer"></div>
+			</section>
+			<section class="container-fluid">
+				<form id="fileupload" class="form-horizontal" action="/api/upload" method="POST" enctype="multipart/form-data">
+					<div class="form-group col-sm-8">
+						<label for="fileInput">Upload Picture</label>
+						<input class="form-static-control" id="fileInput" type="file" name="image" required />
 					</div>
-					<div class="one-third column">
-						<input type="submit" name="uploadImage" class="button-primary" value="UPLOAD"/>
+					<div class="col-sm-4 btn">
+						<input class="form-control btn-success btn-block" type="submit" name="uploadImage" class="button-primary" value="UPLOAD"/>
 					</div>
-				</div>
-			</form>
+				</form>
+			</section>
 		</div>
 	</main>
 	<footer>

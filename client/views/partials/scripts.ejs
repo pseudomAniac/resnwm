@@ -1,0 +1,40 @@
+<script src="/js/angular.js" ></script>
+<script src="/ngClient/appModules.js" ></script>
+<script src="/ngClient/appControllers.js" ></script>
+<script src="/js/jquery.js" ></script>
+<script src="/js/jquery-ui.js" ></script>
+<script src="/js/jquery.bxslider.js" ></script>
+<script src="/js/bootstrap.js" ></script>
+<script>
+	$(document).ready(function() {
+		$('.bx-slider').bxSlider();
+	});
+ $(function () {
+    $("#fileupload").change(function () {
+      if (typeof (FileReader) != "undefined") {
+        var dvPreview = $("#image-previewer");
+        dvPreview.html("Your image is being uploaded...a preview will appear here shortly");
+        var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
+        $($(this)[0].files).each(function () {
+          var file = $(this);
+          if (regex.test(file[0].name.toLowerCase())) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+              var img = $("<img />");
+              img.attr("style", "height:100px;width: 100px");
+              img.attr("src", e.target.result);
+              dvPreview.append(img);
+            }
+            reader.readAsDataURL(file[0]);
+          } else {
+            alert(file[0].name + " is not a valid image file.");
+            dvPreview.html("");
+            return false;
+          }
+        });
+      } else {
+        alert("This browser does not support HTML5 FileReader.");
+      }
+    });
+	});
+</script>
